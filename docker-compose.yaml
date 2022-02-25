@@ -1,0 +1,40 @@
+version: "3"
+services:
+  registry:
+    image: registry:2.7.0
+    container_name: registrybackend
+    networks:
+      - registrynw
+    ports:
+      - "8080:5000"    
+    restart: always
+    volumes:
+      - registry:/var/lib/registry
+      - ./certs:/certs
+      - ./pasfile:/passfile  
+    environment:
+      - REGISTRY_HTTP_TLS_CERTIFICATE=/certs/dock.devforfree.tech.crt
+      - REGISTRY_HTTP_TLS_KEY=/certs/dock.devforfree.tech.key
+      - REGISTRY_AUTH=htpasswd
+      - REGISTRY_AUTH_HTPASSWD_PATH=/passfile/passfile
+      - "REGISTRY_AUTH_HTPASSWD_REALM=Registry Realm"
+  front:
+    image: konradkleine/docker-registry-frontend:v2
+    container_name: frontend
+    networks:
+      - registrynw
+    ports:
+      - "443:443"     
+    restart: always
+    volumes:
+      - ./certs:/certs
+    environment:
+      - ENV_DOCKER_REGISTRY_HOST=registrybackend
+      - ENV_DOCKER_REGISTRY_USE_SSL=1
+      - ENV_DOCKER_REGISTRY_PORT=5000
+      - ENV_USE_SSL=yes
+volumes:
+  registry:
+networks:
+  registrynw:
+
