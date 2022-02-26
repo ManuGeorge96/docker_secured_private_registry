@@ -33,7 +33,7 @@ The pushed images would be safe as the image directory in the container is mount
 -  Generate SSL certs for your domain. and move them to <b>certs</b> folder.
 -  Generate htpasswd for authentication, you can use below command for this,
    ```sh
-    docker run mdockanu/htpasswd manu manu123 > $(pwd)/pasfile/passfile
+    docker run mdockanu/htpasswd USER PASSWORD > $(pwd)/pasfile/passfile
    ```
    - The generated password will be stored inside pasfile/passfile
 - Replace below <b>domain.com</b> in docker-compose.yaml file with your .crt and .key file, and save the file and exit.
