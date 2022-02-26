@@ -27,7 +27,8 @@ services:
       - "443:443"     
     restart: always
     volumes:
-      - ./certs:/certs
+      - ./certs/dock.devforfree.tech.crt:/etc/apache2/server.crt:ro
+      - ./certs/dock.devforfree.tech.key:/etc/apache2/server.key:ro
     environment:
       - ENV_DOCKER_REGISTRY_HOST=registrybackend
       - ENV_DOCKER_REGISTRY_USE_SSL=1
