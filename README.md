@@ -1,0 +1,1 @@
+# docker_secured_private_registry
