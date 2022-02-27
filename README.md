@@ -19,7 +19,7 @@ The pushed images would be safe as the image directory in the container is mount
 ## Prerequisites
 
 -  Sould have <b>Docker</b> installed. For Installation [install].
--  Should have <b>Docker-compose</b> Installed.
+-  Should have <b>Docker-compose</b> Installed. For Installation [install].
 -  Server IP as A record for your domain.
 
 ## Steps
