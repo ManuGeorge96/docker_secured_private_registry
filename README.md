@@ -18,8 +18,8 @@ The pushed images would be safe as the image directory in the container is mount
 
 ## Prerequisites
 
--  Sould have <b>Docker</b> installed.
--  Should have <b>Docker-compose</b> Installed.
+-  Sould have <b>Docker</b> installed. For Installation [install].
+-  Should have <b>Docker-compose</b> Installed. For Installation [install].
 -  Server IP as A record for your domain.
 
 ## Steps
@@ -72,6 +72,8 @@ The pushed images would be safe as the image directory in the container is mount
    docker pull domain.com:8080/IMAGE_NAME:VERSION
   ```
 - Accessing Front End UI: https://domain.com
+
+[install]:<https://github.com/ManuGeorge96/bashscript_docker_docker-compose>
   
   
     
