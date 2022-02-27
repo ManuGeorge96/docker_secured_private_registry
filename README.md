@@ -7,7 +7,7 @@ It is basically a docker registry where we can store our images securly, and the
 ## About
 
 This repo consist of docker compose file required for building and configuring registry container and the front end section.
-Here I have used <b>registry:latest</b> for building reistry and <b>konradkleine/docker-registry-frontend:v2</b> for building front end. Bith te containers are secured with HTTPS encryption, aso the registry part is secured with password.
+Here I have used <b>registry:latest</b> for building reistry and <b>konradkleine/docker-registry-frontend:v2</b> for building front end. Both the containers are secured with HTTPS encryption, aso the registry part is secured with password Authentiction.
 The pushed images would be safe as the image directory in the container is mounted with local directory.
 
 ## Services Created
