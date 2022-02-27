@@ -13,8 +13,8 @@ services:
       - ./certs:/certs
       - ./pasfile:/passfile  
     environment:
-      - REGISTRY_HTTP_TLS_CERTIFICATE=/certs/dock.devforfree.tech.crt
-      - REGISTRY_HTTP_TLS_KEY=/certs/dock.devforfree.tech.key
+      - REGISTRY_HTTP_TLS_CERTIFICATE=/certs/domain.com.crt
+      - REGISTRY_HTTP_TLS_KEY=/certs/domain.com.key
       - REGISTRY_AUTH=htpasswd
       - REGISTRY_AUTH_HTPASSWD_PATH=/passfile/passfile
       - "REGISTRY_AUTH_HTPASSWD_REALM=Registry Realm"
@@ -27,8 +27,8 @@ services:
       - "443:443"     
     restart: always
     volumes:
-      - ./certs/dock.devforfree.tech.crt:/etc/apache2/server.crt:ro
-      - ./certs/dock.devforfree.tech.key:/etc/apache2/server.key:ro
+      - ./certs/domain.com.crt:/etc/apache2/server.crt:ro
+      - ./certs/domain.com.key:/etc/apache2/server.key:ro
     environment:
       - ENV_DOCKER_REGISTRY_HOST=registrybackend
       - ENV_DOCKER_REGISTRY_USE_SSL=1
