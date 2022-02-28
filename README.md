@@ -31,7 +31,7 @@ The pushed images would be safe as the image directory in the container is mount
     cd  docker_secured_private_registry
    ```
 -  Generate SSL certs for your domain. and move them to <b>certs</b> folder.
--  Generate htpasswd for authentication, you can use below command for this,
+-  Generate password for authentication, you can use below command,
    ```sh
     docker run mdockanu/htpasswd USER PASSWORD > $(pwd)/pasfile/passfile
    ```
